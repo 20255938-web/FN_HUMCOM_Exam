@@ -1,0 +1,450 @@
+/* Hamburger box (3 lines inside a box) */
+.hamburger-box {
+  position: fixed;
+  top: 18px;
+  right: 20px;
+  width: 54px;
+  height: 44px;
+  background: rgba(10,10,10,0.95);
+  border: 2px solid #00eaff;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: 6px;
+  z-index: 1001;
+  cursor: pointer;
+  box-shadow: 0 4px 18px rgba(0, 238, 255, 0.08);
+  transition: transform 0.18s ease;
+}
+
+/* focus/hover */
+.hamburger-box:focus,
+.hamburger-box:hover {
+  transform: scale(1.02);
+  outline: none;
+}
+
+/* The three lines */
+.hamburger-line {
+  width: 30px;
+  height: 3px;
+  background: #00eaff;
+  border-radius: 3px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  box-shadow: 0 0 6px rgba(0, 238, 255, 0.7);
+}
+
+/* When active (turn to X) */
+.hamburger-box.active .hamburger-line:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburger-box.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.hamburger-box.active .hamburger-line:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Site menu - slide from right */
+.site-menu {
+  position: fixed;
+  top: 0;
+  right: -320px;
+  width: 320px;
+  height: 100vh;
+  background: linear-gradient(180deg, #070707, #0d0d0d);
+  border-left: 2px solid #00eaff;
+  padding-top: 88px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: flex-start;
+  padding-left: 24px;
+  transition: right 0.28s cubic-bezier(.2,.9,.2,1);
+  z-index: 1000;
+  box-shadow: -6px 0 24px rgba(0,238,255,0.05);
+}
+
+/* Show menu when active */
+.site-menu.active {
+  right: 0;
+}
+
+/* Menu links */
+.site-menu a {
+  color: #e6e6e6;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 20px;
+  padding: 12px 18px;
+  width: calc(100% - 48px);
+  border-radius: 8px;
+  transition: background 0.18s, color 0.18s, transform 0.18s;
+}
+
+.site-menu a:hover {
+  color: #00eaff;
+  background: rgba(0, 238, 255, 0.04);
+  transform: translateX(-6px);
+}
+
+nav.main-nav {
+  display: none;
+}
+
+@media (min-width: 1100px) {
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #000000;
+  color: #e6e6e6;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Welcome Section */
+.welcome {
+  text-align: center;
+  padding: 90px 20px;
+  background: url('https://img.freepik.com/free-photo/grunge-black-concrete-textured-background_53876-124541.jpg?semt=ais_incoming&w=740&q=80') center/cover no-repeat;
+  background-color: rgba(0, 0, 0, 0.65);
+  background-blend-mode: overlay;
+  animation: fadeIn 2s ease;
+}
+
+.welcome h1 {
+  font-size: 54px;
+  font-weight: 900;
+  color: #00eaff;
+  text-shadow: 0 0 15px #00eaff;
+}
+
+.welcome p {
+  font-size: 20px;
+  max-width: 650px;
+  margin: 12px auto;
+  opacity: 0.95;
+}
+
+.guide-card {
+  display: block;
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: white;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.guide-card:hover {
+  transform: translateY(-5px);
+  background: #272727;
+}
+
+/* Featured Games & Guides Section */
+.featured-games, 
+.game-guides {
+  width: 80%;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 25px 30px;
+  background: #111;
+  color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 18px rgba(0, 238, 255, 0.12);
+  animation: fadeIn 1.2s ease;
+}
+
+.featured-games h2,
+.game-guides h2 {
+  text-align: center;
+  color: #ffb400;
+  margin-bottom: 15px;
+  text-shadow: 0 0 10px #ffb400;
+}
+
+.games-list,
+.guides-list {
+  margin-top: 20px;
+}
+
+.game-card,
+.guide-card {
+  margin-bottom: 20px;
+}
+
+/* Hero Section */
+.hero {
+  background: url(https://i.pinimg.com/originals/cf/66/4a/cf664a5ceabc59be8ffb86f25f9ac09f.gif) center/cover no-repeat;
+  height: 92vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  animation: fadeIn 1.7s ease;
+}
+
+.hero h1 {
+  font-size: 60px;
+  font-weight: 900;
+  margin: 0;
+  color: #ffb400;
+  text-shadow: 0 0 12px #ffb400;
+}
+
+.hero p {
+  font-size: 22px;
+  margin-top: 10px;
+  opacity: 0.9;
+}
+
+.about {
+  width: 80%;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 25px 30px;
+  background: #111;
+  color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 18px rgba(0, 238, 255, 0.12);
+  animation: fadeIn 1.2s ease;
+}
+
+.about h2 {
+  margin-bottom: 10px;
+  text-align: center;
+  color: #ffb400;
+  text-shadow: 0 0 10px #ffb400;
+}
+
+/* Navigation */
+nav {
+  background: #0a0a0a;
+  padding: 15px 0;
+  text-align: center;
+  border-bottom: 2px solid #1a1a1a;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+nav a {
+  color: #d7d7d7;
+  margin: 0 25px;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #00eaff;
+  text-shadow: 0 0 12px #00eaff;
+}
+
+/* Main Section Container IMAGES & BORDER */
+.section {
+  width: 100%;
+  max-width: 1295px;
+  margin: 40px auto;
+  background: #0d0d0d;
+  padding: 50px;
+  border-radius: 14px;
+  border: 1px solid #202020;
+  box-shadow: 0 0 25px rgba(0, 238, 255, 0.1);
+  animation: fadeIn 1.2s ease;
+}
+
+.section img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+}
+
+.section h2 {
+  margin-top: 0;
+  border-left: 6px solid #ffb400;
+  padding-left: 12px;
+  font-size: 32px;
+  font-weight: 800;
+  color: #ffb400;
+  text-shadow: 0 0 10px #ffb400;
+}
+
+.section p {
+  font-size: 17px;
+  opacity: 0.95;
+}
+
+.section-cards {
+  display: flex;
+  justify-content: center;  
+  align-items: center;
+  gap: 20px;                
+  flex-wrap: wrap;          
+  margin-top: 20px;
+}
+
+/* Individual Card */
+.category-menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 25px;
+}
+
+.weapon-list {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.weapon-card {
+  width: 95%;
+  max-width: 1200px;
+  background: #121212;
+  padding: 20px;
+  margin: 30px auto;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 0 25px rgba(0,0,0,0.7);
+}
+
+.weapon-card:hover {
+  border-color: #00eaff;
+  box-shadow: 0 0 20px #00eaff;
+  transform: translateY(-5px);
+}
+
+.weapon-card img {
+  width: 100%;
+  max-width: 1100px;
+  border-radius: 10px;
+  display: block;
+}
+
+.category-card {
+  background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+  padding: 20px;
+  text-align: center;
+  border-radius: 12px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #e6e6e6;
+  border: 2px solid #333;
+  text-decoration: none;
+  box-shadow: 0 0 20px rgba(0, 238, 255, 0.08);
+  animation: floatCard 3s ease-in-out infinite;
+  transition: 0.3s;
+}
+
+.category-card:hover {
+  box-shadow: 0 0 25px #00eaff;
+  color: #00eaff;
+  transform: scale(1.07);
+  border-color: #00eaff;
+}
+
+@keyframes floatCard {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+
+.section-card {
+  width: 200px;
+  height: 200px;
+  background: #1a1a1a;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  color: #fff;
+  border: 2px solid #333;
+  box-shadow: 0 0 18px rgba(0, 238, 255, 0.1);
+  user-select: none;
+}
+
+.section-card:hover {
+  background-color: #222;
+  transform: scale(1.05);
+  box-shadow: 0 0 22px #00eaff;
+}
+
+.section-card:active {
+  transform: scale(0.98);
+}
+
+/* FOOTER */
+.site-footer {
+  background: #0a0a0a;
+  padding: 30px 20px;
+  margin-top: 50px;
+  text-align: center;
+  border-top: 2px solid #00eaff;
+  box-shadow: 0 -2px 12px rgba(0, 238, 255, 0.15);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Default styling for larger screens */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #000000;
+  color: #e6e6e6;
+}
+
+/* Mobile-specific styling */
+@media (max-width: 768px) {
+  .hero { 
+    background-size: cover;
+    height: auto;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+}
+
+
+/* Fix ONLY the CODM GARENA text and spacing on mobile */
+@media (max-width: 768px) {
+
+  .hero {
+    height: 65vh;     
+    padding: 40px 10px;   
+  }
+
+  .hero h1 {
+    font-size: 36px;      
+  }
+
+  .hero p {
+    font-size: 16px;      
+    text-align: center;
+    padding: 0 10px;
+  }
+}
