@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CODM • Featured Games & Meta Hub</title>
+    <link rel="stylesheet" href="ss.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+         :root{
+            --accent: #00c8ff;
+            --bg: #000;
+            --card-bg: #111;
+            --muted: #ccc;
+        }
+
+    
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--bg);
+            color: #e6e6e6;
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        header.hero {
+            text-align: center;
+            padding: 40px 20px;
+            background: url('https://wallpapers.com/images/featured/codm-5szw5oi0v3f9a0zs.jpg') center/cover;
+            background-size: cover;
+        }
+
+        header.hero h1 {
+            font-size: 48px;
+            margin-bottom: 5px;
+            color: #fff;
+            text-shadow: 0 0 10px #000;
+        }
+
+        .quick-nav {
+            text-align: center;
+            padding: 10px;
+            background: #0d0d0d;
+            border-bottom: 2px solid rgba(0,200,255,0.08);
+        }
+        .quick-nav a {
+            color: var(--accent);
+            margin: 0 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+        .quick-nav a:hover { text-shadow: 0 0 10px var(--accent); }
+
+        .section {
+            padding: 34px 20px;
+            max-width: 1100px;
+            margin: 30px auto;
+            border-bottom: 1px solid rgba(255,255,255,0.03);
+        }
+
+        .section h2 {
+            color: var(--accent);
+            border-left: 4px solid var(--accent);
+            padding-left: 12px;
+            margin-bottom: 18px;
+            text-shadow: 0 0 8px rgba(0,200,255,0.08);
+            font-size: 1.3rem;
+        }
+
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .game-card {
+            background: var(--card-bg);
+            padding: 18px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #000;
+            transition: transform .22s ease, box-shadow .22s ease;
+        }
+
+        .game-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 0 26px var(--accent);
+        }
+
+        .game-card img {
+            width: 100%;
+            border-radius: 8px;
+            height: 220px;
+            object-fit: cover;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .game-card h3 {
+            margin: 6px 0;
+            color: var(--accent);
+            font-size: 1.05rem;
+        }
+
+        .game-card p {
+            color: var(--muted);
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        .btn-custom {
+            display: inline-block;
+            padding: 10px 15px;
+            background: var(--accent);
+            color: #000;
+            text-decoration: none;
+            border-radius: 6px;
+            margin-top: 10px;
+            font-weight: 700;
+        }
+
+        .return-btn {
+            display: block;
+            width: 200px;
+            text-align: center;
+            margin: 14px auto;
+        }
+
+        @media (max-width: 480px) {
+            header.hero h1 { font-size: 28px; }
+            .game-card img { height: 180px; }
+        }
+
+        .carousel-item .game-card { max-width: 520px; }
+        .carousel-item img { max-height: 360px; object-fit: cover; }
+
+        .carousel-indicators [data-bs-target] {
+            background-color: rgba(255,255,255,0.4);
+        }
+        .carousel-indicators .active {
+            background-color: var(--accent);
+        }
+
+        #topBtn {
+            position: fixed;
+            bottom: 22px;
+            right: 18px;
+            background: var(--accent);
+            border: none;
+            padding: 10px 12px;
+            border-radius: 8px;
+            font-size: 18px;
+            color: #000;
+            display: none;
+            z-index: 999;
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="hero">
+    <h1>CODM Featured Meta</h1>
+    <p>Top Loadouts • Best Classes • Recommended Gunsmith</p>
+</header>
+
+<nav class="quick-nav">
+    <a href="#gunsCarousel">Guns</a>
+    <a href="#disruptCarousel">Disrupt</a>
+    <a href="#stealthCarousel">Stealth</a>
+    <a href="#supportCarousel">Support</a>
+    <a href="#defenseCarousel">Defense</a>
+    <a href="#trackerCarousel">Tracker</a>
+</nav>
+
+<a class="btn-custom return-btn" href="Home.html">← Return to Home</a>
+
+<!-- GUNS -->
+<section id="gunsCarousel" class="section">
+    <h2>🔥 Featured Meta Guns (Season 2025)</h2>
+
+    <div class="carousel slide" id="gunsCarouselInner" data-bs-ride="carousel">
+
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#gunsCarouselInner" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#gunsCarouselInner" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#gunsCarouselInner" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#gunsCarouselInner" data-bs-slide-to="3"></button>
+        </div>
+
+        <div class="carousel-inner">
+
+            <div class="carousel-item active">
+                <div class="game-card mx-auto">
+                    <img src="pics/switchblade.jpeg" alt="Switchblade X9">
+                    <h3>Switchblade X9 — META SMG</h3>
+                    <p>Fast mobility + high accuracy.</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="game-card mx-auto">
+                    <img src="pics/krig6.jpeg" alt="Krig 6">
+                    <h3>Krig 6 — Laser Accurate AR</h3>
+                    <p>Low recoil, high accuracy.</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="game-card mx-auto">
+                    <img src="pics/dlq33.jpeg" alt="DLQ33">
+                    <h3>DLQ33 — Sniper King</h3>
+                    <p>High damage and fast ADS.</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="game-card mx-auto">
+                    <img src="pics/krm.jpeg" alt="KRM">
+                    <h3>KRM — Close Range Destroyer</h3>
+                    <p>Insane burst potential.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#gunsCarouselInner" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#gunsCarouselInner" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+</section>
+
+<!-- DISRUPT -->
+<section id="disruptCarousel" class="section">
+    <h2>🎮 BR Classes - Disrupt</h2>
+
+    <div id="disruptInner" class="carousel slide" data-bs-ride="carousel">
+
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#disruptInner" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#disruptInner" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#disruptInner" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#disruptInner" data-bs-slide-to="3"></button>
+            <button type="button" data-bs-target="#disruptInner" data-bs-slide-to="4"></button>
+            <button type="button" data-bs-target="#disruptInner" data-bs-slide-to="5"></button>
+            <button type="button" data-bs-target="#disruptInner" data-bs-slide-to="6"></button>
+        </div>
+
+        <div class="carousel-inner">
+
+            <div class="carousel-item active">
+                <div class="game-card">
+                    <img src="pics/shock_wave.jpeg" alt="Shock Wave">
+                    <h3>Shock Wave</h3>
+                    <p>Breaks enemy positions.</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="game-card">
+                    <img src="pics/rewind.jpeg" alt="Rewind">
+                    <h3>Rewind</h3>
+                    <p>Resets cooldowns.</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="game-card">
+                    <img src="pics/misdirection.jpeg" alt="Misdirection">
+                    <h3>Misdirection</h3>
+                    <p>Creates distractions.</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="game-card">
+                    <img src="pics/hacker.jpeg" alt="Hacker">
+                    <h3>Hacker</h3>
+                    <p>Disables enemy gadgets.</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="game-card">
+                    <img src="pics/trickster.jpeg" alt="Trickster">
+                    <h3>Trickster</h3>
+                    <p>Creates illusions.</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="game-card">
+                    <img src="pics/trap_master.jpeg" alt="Trap Master">
+                    <h3>Trap Master</h3>
+                    <p>Controls movement.</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="game-card">
+                    <img src="pics/smokebomber.jpeg" alt="Smokebomber">
+                    <h3>Smokebomber</h3>
+                    <p>Short-range power.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#disruptInner" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#disruptInner" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+</section>
+
+<!-- STEALTH -->
+<section id="stealthCarousel" class="section">
+    <h2>🎮 BR Classes - Stealth</h2>
+
+    <div id="stealthInner" class="carousel slide" data-bs-ride="carousel">
+
+        <div class="carousel-indicators">
+            <button class="active" data-bs-target="#stealthInner" data-bs-slide-to="0"></button>
+            <button data-bs-target="#stealthInner" data-bs-slide-to="1"></button>
+            <button data-bs-target="#stealthInner" data-bs-slide-to="2"></button>
+            <button data-bs-target="#stealthInner" data-bs-slide-to="3"></button>
+            <button data-bs-target="#stealthInner" data-bs-slide-to="4"></button>
+            <button data-bs-target="#stealthInner" data-bs-slide-to="5"></button>
+            <button data-bs-target="#stealthInner" data-bs-slide-to="6"></button>
+        </div>
+
+        <div class="carousel-inner">
+
+            <div class="carousel-item active">
+                <div class="game-card">
+                    <img src="pics/ninja.jpeg" alt="Ninja">
+                    <h3>Ninja</h3>
+                    <p>Silent movement.</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="game-card">
+                    <img src="pics/tactical_bouncer.jpeg" alt="Tactical Bouncer">
+                    <h3>Tactical Bouncer</h3>
+                    <p>Quick reposition.</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="game-card">
+                    <img src="pics/teleport.jpeg" alt="Teleport">
+                    <h3>Teleport</h3>
+                    <p>Instant movement.</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="game-card">
+                    <img src="pics/poltergeist.jpeg" alt="Poltergeist">
+                    <h3>Poltergeist</h3>
+                    <p>Invisible movement.</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="game-card">
+                    <img src="pics/jet_boost.jpeg" alt="Jet Boost">
+                    <h3>Jet Boost</h3>
+                    <p>High mobility.</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="game-card">
+                    <img src="pics/pumped.jpeg" alt="Pumped">
+                    <h3>Pumped</h3>
+                    <p>Agile movement.</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="game-card">
+                    <img src="pics/quick_strike.jpeg" alt="Quick Strike">
+                    <h3>Quick Strike</h3>
+                    <p>Fast flanking.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#stealthInner" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#stealthInner" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+</section>
+
+<!-- SUPPORT -->
+<section id="supportCarousel" class="section">
+    <h2>🎮 BR Classes - Support</h2>
+
+    <div id="supportInner" class="carousel slide" data-bs-ride="carousel">
+
+        <div class="carousel-indicators">
+            <button class="active" data-bs-target="#supportInner" data-bs-slide-to="0"></button>
+            <button data-bs-target="#supportInner" data-bs-slide-to="1"></button>
+            <button data-bs-target="#supportInner" data-bs-slide-to="2"></button>
+            <button data-bs-target="#supportInner" data-bs-slide-to="3"></button>
+        </div>
+
+        <div class="carousel-inner">
+
+            <div class="carousel-item active">
+                <div class="game-card">
+                    <img src="pics/medic.jpeg" alt="Medic">
+                    <h3>Medic</h3>
+                    <p>Heals teammates.</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="game-card">
+                    <img src="pics/refitter.jpeg" alt="Refitter">
+                    <h3>Refitter</h3>
+                    <p>Repairs equipment.</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="game-card">
+                    <img src="pics/revive.jpeg" alt="Revive">
+                    <h3>Revive</h3>
+                    <p>Fast reviving.</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="game-card">
+                    <img src="pics/kinetic_station.jpeg" alt="Kinetic Station">
+                    <h3>Kinetic Station</h3>
+                    <p>Shields teammates.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#supportInner" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#supportInner" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+</section>
+
+<!-- DEFENSE -->
+<section id="defenseCarousel" class="section">
+    <h2>🎮 BR Classes - Defense</h2>
+
+    <div id="defenseInner" class="carousel slide" data-bs-ride="carousel">
+
+        <div class="carousel-indicators">
+            <button class="active" data-bs-target="#defenseInner" data-bs-slide-to="0"></button>
+            <button data-bs-target="#defenseInner" data-bs-slide-to="1"></button>
+            <button data-bs-target="#defenseInner" data-bs-slide-to="2"></button>
+            <button data-bs-target="#defenseInner" data-bs-slide-to="3"></button>
+        </div>
+
+        <div class="carousel-inner">
+
+            <div class="carousel-item active">
+                <div class="game-card">
+                    <img src="pics/defender.jpeg" alt="Defender">
+                    <h3>Defense 1</h3>
+                    <p>Protects teammates.</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="game-card">
+                    <img src="pics/desperado.jpeg" alt="Desperado">
+                    <h3>Defense 2</h3>
+                    <p>Creates strongholds.</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="game-card">
+                    <img src="pics/igniter.jpeg" alt="Igniter">
+                    <h3>Defense 3</h3>
+                    <p>Fire-based attacks.</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="game-card">
+                    <img src="pics/spotter.jpeg" alt="Spotter">
+                    <h3>Defense 4</h3>
+                    <p>Provides intel.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#defenseInner" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#defenseInner" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+</section>
+
+<!-- TRACKER -->
+<section id="trackerCarousel" class="section">
+    <h2>🎮 BR Classes - Tracker</h2>
+
+    <div id="trackerInner" class="carousel slide" data-bs-ride="carousel">
+
+        <div class="carousel-indicators">
+            <button class="active" data-bs-target="#trackerInner" data-bs-slide-to="0"></button>
+            <button data-bs-target="#trackerInner" data-bs-slide-to="1"></button>
+            <button data-bs-target="#trackerInner" data-bs-slide-to="2"></button>
+            <button data-bs-target="#trackerInner" data-bs-slide-to="3"></button>
+            <button data-bs-target="#trackerInner" data-bs-slide-to="4"></button>
+        </div>
+
+        <div class="carousel-inner">
+
+            <div class="carousel-item active">
+                <div class="game-card">
+                    <img src="pics/scout.jpeg" alt="Scout">
+                    <h3>Tracker 1</h3>
+                    <p>Finds enemies.</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="game-card">
+                    <img src="pics/clown.jpeg" alt="Clown">
+                    <h3>Tracker 2</h3>
+                    <p>Tracks movement.</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="game-card">
+                    <img src="pics/mechanic.jpeg" alt="Mechanic">
+                    <h3>Tracker 3</h3>
+                    <p>Provides gadgets.</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="game-card">
+                    <img src="pics/airborne.jpeg" alt="Airborne">
+                    <h3>Tracker 4</h3>
+                    <p>Aerial intel.</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="game-card">
+                    <img src="pics/ravenger_launcher.jpeg" alt="Ravenger Launcher">
+                    <h3>Tracker 5</h3>
+                    <p>Reveals enemies.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#trackerInner" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#trackerInner" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+</section>
+
+<!-- BACK TO TOP -->
+<button id="topBtn">↑</button>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    const topBtn = document.getElementById('topBtn');
+    window.addEventListener('scroll', () => {
+        topBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
+    });
+    topBtn.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+</script>
+
+<!-- EXTRA LINKS -->
+<section class="section">
+  <h2 style="text-align:center; color:#00c8ff;">🔗 Explore More About CODM</h2>
+  <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap; margin-top:20px;">
+
+    <a href="https://www.callofduty.com/mobile" target="_blank" style="text-decoration:none;">
+      <div style="background:#111; padding:20px; border-radius:15px; width:220px; text-align:center;">
+        <img src="pics/official.jpeg" style="width:100px; margin-bottom:10px;">
+        <h3 style="color:#00c8ff;">Official Site</h3>
+      </div>
+    </a>
+
+    <a href="https://callofduty.fandom.com/wiki/Call_of_Duty:_Mobile" target="_blank" style="text-decoration:none;">
+      <div style="background:#111; padding:20px; border-radius:15px; width:220px; text-align:center;">
+        <img src="pics/wiki.jpeg" style="width:60px; margin-bottom:10px;">
+        <h3 style="color:#00c8ff;">CODM Wiki</h3>
+      </div>
+    </a>
+
+    <a href="https://www.youtube.com/c/CallofDutyMobile" target="_blank" style="text-decoration:none;">
+      <div style="background:#111; padding:20px; border-radius:15px; width:220px; text-align:center;">
+        <img src="pics/youtube.jpeg" style="width:60px; margin-bottom:10px;">
+        <h3 style="color:#00c8ff;">CODM YouTube</h3>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<footer class="site-footer">
+    <h3>Credits</h3>
+    <p>Email — 20255938@s.ubaguio.edu</p>
+    <p>Email — 20256049@s.ubaguio.edu</p>
+    <p>Email — 20255917@s.ubaguio.edu</p>
+    <p>Email — 20256312@s.ubaguio.edu</p>
+    <div class="footer-bottom">
+        <p>© 2025 CODM Garena • Elite Ops Portal</p>
+    </div>
+</footer>
+
+</body>
+</html>
